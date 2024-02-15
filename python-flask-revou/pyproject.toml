@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "python-flask-revou"
+version = "0.1.0"
+description = ""
+authors = ["widiapuspitasar <puspitasariwidia@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+flask = "^3.0.2"
+poetry-dotenv-plugin = "^0.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
