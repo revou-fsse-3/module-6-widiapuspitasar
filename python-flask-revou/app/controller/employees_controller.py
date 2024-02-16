@@ -20,7 +20,8 @@ def get_employees(employees_id: str):
                 "name" : employees.name,
                 "phonenumber" : employees.phonenumber,
                 "role" : employees.role,
-                "schedule" : employees.schedule
+                "schedule" : employees.schedule,
+                "email" : employees.email
             }), OK
         return jsonify({'error': 'Employees Not Found'}), NOT_FOUND
     except Exception as e:
@@ -36,6 +37,7 @@ def create_employees():
             employees.phonenumber = data["phonenumber"]
             employees.role = data["role"]
             employees.schedule = data["schedule"]
+            employees.email = data["email"]
         
         db.session.add(employees)
         db.session.commit()
@@ -71,10 +73,11 @@ def edit_employees(employees_id: str):
             employees.phonenumber = data["phonenumber"]
             employees.role = data["role"]
             employees.schedule = data["schedule"]
+            employees.email = data["email"]
         
         db.session.commit()
 
-        return jsonify({'message': 'Animal Update Succesfully'}), OK
+        return jsonify({'message': 'Employees Update Succesfully'}), OK
     except Exception as e:
         return jsonify({'error': str(e)}), INTERNAL_SERVER_ERROR
 
