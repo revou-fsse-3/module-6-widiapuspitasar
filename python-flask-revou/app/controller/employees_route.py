@@ -103,7 +103,7 @@ def delete_employees(employees_id):
         employees_service = Employees_service()
 
         employees = employees_service.delete_employees(employees_id)
-        if employees == "Animal not found":
+        if employees == "Employees not found":
             return api_response(
                 status_code=404,
                 message=employees,
