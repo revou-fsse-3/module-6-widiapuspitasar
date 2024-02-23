@@ -32,7 +32,3 @@ class Animal_repo():
 
         db.session.commit()
         return animal_management
-
-    
-  
-    
